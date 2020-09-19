@@ -17,6 +17,7 @@ Route::get('/',[App\Http\Controllers\WelcomeController::class, 'index']);
 
 Route::group(['middleware' => 'auth'],function(){
 	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index']);
+	Route::get('/leads/add',[App\Http\Controllers\LeadController::class, 'create']);
 });
 
 Auth::routes();
