@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[App\Http\Controllers\WelcomeController::class, 'index']);
 
 Route::group(['middleware' => 'auth'],function(){
-	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index']);
+	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index'])->name('dash');
 	Route::get('/leads/add',[App\Http\Controllers\LeadController::class, 'create']);
+	Route::get('/leads/list',[App\Http\Controllers\LeadController::class, 'index']);
+	Route::post('/leads/save',[App\Http\Controllers\LeadController::class, 'save']);
 });
 
 Auth::routes();

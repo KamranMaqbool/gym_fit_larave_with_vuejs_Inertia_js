@@ -18,10 +18,10 @@ class CreateLeadsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('age');
-            $table->string('interested_package');
-            $table->date('date');
+            $table->date('dob');
+            $table->string('interested_package')->nullable();
             $table->unsignedInteger('branch_id');
+            $table->unsignedInteger('added_by');
             $table->timestamps();
         });
     }

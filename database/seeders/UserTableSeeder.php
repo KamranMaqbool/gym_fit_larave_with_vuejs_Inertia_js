@@ -13,13 +13,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Models\User::create([
+        \App\Models\User::create([
         	'name' => 'aaa',
         	'email' => 'a@gmail.com',
         	'password' => bcrypt('12345678'),
         ]);
 
-        App\Models\User::create([
+        \App\Models\User::create([
         	'name' => 'bbb',
         	'email' => 'b@gmail.com',
         	'password' => bcrypt('12345678'),

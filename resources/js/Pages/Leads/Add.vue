@@ -54,8 +54,9 @@ export default {
         }
     },
     methods:{
-        handleSubmit(){
-            // axios.post('');
+        async handleSubmit(){
+            debugger
+            let data = await this.$inertia.post('/leads/save',this.lead);
         }
     }
 }
