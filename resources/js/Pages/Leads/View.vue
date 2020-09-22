@@ -41,7 +41,7 @@
 <script>
 import Layout from '../../shared/Layout.vue'
 export default {
-    props: ['name', 'degree'],
+    props: ['leadProp'],
     components: {
         Layout
     },
@@ -61,7 +61,10 @@ export default {
             debugger
             let data = await this.$inertia.post('/leads/save',this.lead);
         }
-    }
+    },
+    created(){
+        this.lead = this.leadProp;
+    },
 }
 
 </script>

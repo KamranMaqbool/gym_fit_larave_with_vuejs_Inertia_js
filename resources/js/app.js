@@ -11,6 +11,8 @@ import Vue from 'vue'
 
 Vue.use(InertiaApp)
 
+Vue.prototype.$route = (...args) => route(...args).url()
+
 const app = document.getElementById('app')
 
 if (app) {

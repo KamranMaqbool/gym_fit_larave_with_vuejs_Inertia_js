@@ -18,6 +18,7 @@
                     			<th>DOB</th>
                     			<th>Package</th>
                     			<th>Added On</th>
+                                <th></th>
                     		</tr>
                     	</thead>
                     	<tbody>
@@ -29,6 +30,7 @@
                     			<td>{{lead.dob}}</td>
                     			<td>{{lead.interested_package}}</td>
                     			<td>{{lead.added_by}}</td>
+                                <td> <inertia-link :href="$route('lead.view',{lead:lead})" class="dropdown-item"> &#x27a1; </inertia-link> </td>
                     		</tr>
                     	</tbody>
                     </table>

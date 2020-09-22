@@ -18,7 +18,8 @@ Route::get('/',[App\Http\Controllers\WelcomeController::class, 'index']);
 Route::group(['middleware' => 'auth'],function(){
 	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index'])->name('dash');
 	Route::get('/leads/add',[App\Http\Controllers\LeadController::class, 'create']);
-	Route::get('/leads/list',[App\Http\Controllers\LeadController::class, 'index']);
+	Route::get('/leads/list',[App\Http\Controllers\LeadController::class, 'index'])->name('lead.list');
+	Route::get('/leads/view/{lead}',[App\Http\Controllers\LeadController::class, 'view'])->name('lead.view');
 	Route::post('/leads/save',[App\Http\Controllers\LeadController::class, 'save']);
 });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Lead;
 
 class LeadController extends Controller
 {
@@ -34,8 +35,8 @@ class LeadController extends Controller
     	]);
 
     	$pacakge='';
-    	if($request->has('package')){
-    		$package = $request->input('package');
+    	if($request->has('interested_package')){
+    		$package = $request->input('interested_package');
     	}
 
     	\App\Models\Lead::create([
@@ -48,6 +49,13 @@ class LeadController extends Controller
     		'added_by' => \Auth::user()->id,
     	]);
 
-    	return redirect()->route('dash');
+    	return redirect()->route('lead.list');
+    }
+
+    public function view(Lead $lead)
+    {
+        return Inertia::render('Leads/View',[
+            'lead-prop' => $lead,
+        ]);
     }
 }
