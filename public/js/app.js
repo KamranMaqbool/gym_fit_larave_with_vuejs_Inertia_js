@@ -2215,17 +2215,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var data;
+        var respone;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                debugger;
-                _context.next = 3;
-                return _this.$inertia.post('/leads/save', _this.lead);
+                _context.next = 2;
+                return _this.$inertia.post('/leads/update', _this.lead);
 
-              case 3:
-                data = _context.sent;
+              case 2:
+                respone = _context.sent;
+                debugger;
 
               case 4:
               case "end":
@@ -39450,7 +39450,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("th", [_vm._v("Phone Number")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("DOB")]),
+                _c("th", [_vm._v("Age")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Package")]),
                 _vm._v(" "),
@@ -39472,7 +39472,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(lead.phone))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(lead.dob))]),
+                  _c("td", [_vm._v(_vm._s(lead.age))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(lead.interested_package))]),
                   _vm._v(" "),

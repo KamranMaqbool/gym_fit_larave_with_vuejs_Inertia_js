@@ -58,8 +58,8 @@ export default {
     },
     methods:{
         async handleSubmit(){
+            let respone = await this.$inertia.post('/leads/update',this.lead);
             debugger
-            let data = await this.$inertia.post('/leads/save',this.lead);
         }
     },
     created(){

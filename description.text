@@ -1,4 +1,8 @@
 Tutorial Link are here =
 https://www.youtube.com/watch?v=953kVd6JCWk&list=PLkZU2rKh1mT8-yRt0Gr5S1ESVRZPB8fKS&index=2
 
-Last Lecture = 10
+Last Lecture = 12
+
+
+Pacakge
+https://github.com/tighten/ziggy	(this package is used for to access laravel named route in javascript app)

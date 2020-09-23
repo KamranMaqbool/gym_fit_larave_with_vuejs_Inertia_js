@@ -15,7 +15,7 @@
                     			<th>Name</th>
                     			<th>Email</th>
                     			<th>Phone Number</th>
-                    			<th>DOB</th>
+                    			<th>Age</th>
                     			<th>Package</th>
                     			<th>Added On</th>
                                 <th></th>
@@ -27,7 +27,7 @@
                     			<td>{{lead.name}}</td>
                     			<td>{{lead.email}}</td>
                     			<td>{{lead.phone}}</td>
-                    			<td>{{lead.dob}}</td>
+                    			<td>{{lead.age}}</td>
                     			<td>{{lead.interested_package}}</td>
                     			<td>{{lead.added_by}}</td>
                                 <td> <inertia-link :href="$route('lead.view',{lead:lead})" class="dropdown-item"> &#x27a1; </inertia-link> </td>

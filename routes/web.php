@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::get('/leads/list',[App\Http\Controllers\LeadController::class, 'index'])->name('lead.list');
 	Route::get('/leads/view/{lead}',[App\Http\Controllers\LeadController::class, 'view'])->name('lead.view');
 	Route::post('/leads/save',[App\Http\Controllers\LeadController::class, 'save']);
+	Route::post('/leads/update',[App\Http\Controllers\LeadController::class, 'update'])->name('lead.update');
 });
 
 Auth::routes();
