@@ -12,4 +12,9 @@ class Lead extends Model
     protected $fillable = [
         'name', 'email', 'phone', 'dob','interested_package','added_by','branch_id','age',
     ];
+
+    public function reminders()
+    {
+    	return $this->hasMany('App\Models\Reminder')->orderByDesc('id');
+    }
 }
