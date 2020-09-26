@@ -10899,3 +10899,12 @@ a.text-dark:focus {
   }
 }
 
+.breadcrumb-sep {
+  color: gray;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+

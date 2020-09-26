@@ -19,18 +19,21 @@
             				Add Reminder &#x2795;
             			</div>
             			<div class="card-body">
-            				<form onSubmit.prevent="handleSubmit" accept-charset="utf-8">
+                            <reminder-add-form :main-reminder="reminder" @reminderOnSubmit="handleSubmit"></reminder-add-form>
+            				<!-- <form @submit.prevent="handleSubmit">
             					<div class="form-group">
             						<label for="reminder">Reminder</label>
             						<textarea name="reminder" class="form-control" v-model="reminder.reminder"></textarea>
+                                    <div class="error" v-if="$page.errors.reminder">{{ $page.errors.reminder[0] }}</div>
             					</div>
             					<div class="form-group">
             						<label>Reminder Date</label>
             						<input name="date" type="date" v-model="reminder.reminder_date" class="form-control" />
+                                    <div class="error" v-if="$page.errors.reminder_date">{{ $page.errors.reminder_date[0] }}</div>
             					</div>
 
             					<button class="btn btn-success">Save</button>
-            				</form>
+            				</form> -->
             			</div>
             		</div>
             	</div>
@@ -40,10 +43,12 @@
 </template>
 <script>
 import Layout from '../../shared/Layout.vue'
+import ReminderAddForm from './ReminderForm.vue'
 export default {
     name: 'AddReminder',
     components: {
-        Layout
+        Layout,
+        ReminderAddForm
     },
     props:{
     	lead:Object,
@@ -57,8 +62,10 @@ export default {
     	}
     },
     methods:{
-    	handleSubmit(){
-
+    	handleSubmit(postData){
+            debugger
+            postData.lead_id = this.lead.id;
+            this.$inertia.post(route('reminder.save'),postData);
     	}
     }
 }

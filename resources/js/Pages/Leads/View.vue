@@ -71,7 +71,7 @@
                                         <div class="col-md-2">{{reminder.reminder_date}}</div>
                                         <div class="col-md-2"><strong>{{reminder.status}}</strong></div>
                                         <div class="col-md-2">
-                                            <inertia-link href="#" class="dropdown-item float-right"> &#x27a1; </inertia-link>
+                                            <inertia-link :href="$route('reminder.view',{laead:lead,reminder:reminder})" class="dropdown-item float-right"> &#x27a1; </inertia-link>
                                         </div>
                                     </div>
                                 </li>

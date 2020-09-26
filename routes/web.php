@@ -24,6 +24,9 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/leads/update',[App\Http\Controllers\LeadController::class, 'update'])->name('lead.update');
 
 	Route::get('/leads/view/{lead}/reminder/add',[App\Http\Controllers\ReminderController::class, 'create'])->name('reminder.add');
+
+	Route::post('/leads/view/reminder/save',[App\Http\Controllers\ReminderController::class, 'store'])->name('reminder.save');
+	Route::get('/leads/view/reminder/{reminder}/view',[App\Http\Controllers\ReminderController::class, 'view'])->name('reminder.view');
 });
 
 Auth::routes();
