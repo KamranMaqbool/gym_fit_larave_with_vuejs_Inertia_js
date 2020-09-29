@@ -11,6 +11,11 @@ class Reminder extends Model
 
    	protected $guarded = [];
 
+   	public function lead()
+   	{
+   		return $this->belongsTo('App\Models\Lead','lead_id');
+   	}
+
    	public function getStatusAttribute($value)
    	{
    		return ucfirst($value);

@@ -19,7 +19,11 @@
             				Add Reminder &#x2795;
             			</div>
             			<div class="card-body">
-                            <reminder-add-form :main-reminder="reminder" @reminderOnSubmit="handleSubmit"></reminder-add-form>
+                            <reminder-add-form 
+                                :main-reminder="reminder"
+                                :lead="lead"
+                                @reminderOnSubmit="handleSubmit">
+                            </reminder-add-form>
             			</div>
             		</div>
             	</div>
@@ -34,7 +38,10 @@ import Layout from '../../shared/Layout.vue'
 import ReminderAddForm from './ReminderForm.vue'
 	export default {
 	name: 'ViewReminder',
-	props:['lead','reminder'],
+    props:{
+        lead:Object,
+        reminder:Object,
+    },
     components: {
         Layout,
         ReminderAddForm,
@@ -43,6 +50,9 @@ import ReminderAddForm from './ReminderForm.vue'
     	handleSubmit(postData){
     		debugger
     	}
+    },
+    created(){
+        
     }
 	}
 </script>

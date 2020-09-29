@@ -15,6 +15,6 @@ class Lead extends Model
 
     public function reminders()
     {
-    	return $this->hasMany('App\Models\Reminder')->orderByDesc('id');
+    	return $this->hasMany('App\Models\Reminder','lead_id')->orderByDesc('id');
     }
 }

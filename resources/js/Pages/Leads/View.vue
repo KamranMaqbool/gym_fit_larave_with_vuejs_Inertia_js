@@ -71,14 +71,14 @@
                                         <div class="col-md-2">{{reminder.reminder_date}}</div>
                                         <div class="col-md-2"><strong>{{reminder.status}}</strong></div>
                                         <div class="col-md-2">
-                                            <inertia-link :href="$route('reminder.view',{laead:lead,reminder:reminder})" class="dropdown-item float-right"> &#x27a1; </inertia-link>
+                                            <inertia-link :href="$route('reminder.view',{lead:lead,reminder:reminder})" class="dropdown-item float-right"> &#x27a1; </inertia-link>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="card-body" v-else>
-                            <inertia-link :href="$route('reminder.add',{lead:lead})" class="btn btn-success">Add New Reminder &#x23f2;</inertia-link>
+                            <inertia-link :href="$route('reminder.add',{'lead':lead})" class="btn btn-success">Add New Reminder &#x23f2;</inertia-link>
                             <!-- <button type="button" class="btn btn-success">Add New Reminder &#x23f2;</button> -->
                         </div>
                     </div>
@@ -102,6 +102,7 @@ export default {
                 phone: '',
                 email: '',
                 dob: '',
+                reminders:[],
             }
         }
     },
