@@ -11,6 +11,8 @@
 						<p>{{reminder.reminder}}</p>
 					</inertia-link>
 				</li>
+
+				<li v-if="reminders"><strong>No Record Found</strong> &#x1f31d;</li>
 			</ul>
 		</div>
 	</div>

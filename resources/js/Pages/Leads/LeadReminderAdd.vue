@@ -49,14 +49,12 @@ export default {
     },
     methods:{
     	handleSubmit(postData){
-            debugger
             postData.lead_id = this.lead.id;
             this.$inertia.post(route('reminder.save'),postData);
     	}
     },
     created(){
         this.lead
-        debugger
     }
 }
 

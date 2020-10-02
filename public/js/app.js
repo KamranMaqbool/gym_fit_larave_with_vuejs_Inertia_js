@@ -1964,6 +1964,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ReminderList",
   props: {
@@ -2241,14 +2243,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     handleSubmit: function handleSubmit(postData) {
-      debugger;
       postData.lead_id = this.lead.id;
       this.$inertia.post(route('reminder.save'), postData);
     }
   },
   created: function created() {
     this.lead;
-    debugger;
   }
 });
 
@@ -2691,14 +2691,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                debugger;
-                _context.next = 3;
+                _context.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/logout', {});
 
-              case 3:
+              case 2:
                 window.location.href = "/";
 
-              case 4:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -39546,34 +39545,43 @@ var render = function() {
       _c(
         "ul",
         { staticClass: "list-group list-group-flush" },
-        _vm._l(_vm.reminders, function(reminder) {
-          return _c(
-            "li",
-            { key: reminder.id, staticClass: "list-group-item" },
-            [
-              _c(
-                "inertia-link",
-                {
-                  attrs: {
-                    href: _vm.$route("reminder.view", {
-                      lead: reminder.lead,
-                      reminder: reminder
-                    })
-                  }
-                },
-                [
-                  _c("strong", [_vm._v(_vm._s(reminder.lead.name))]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(reminder.reminder))])
-                ]
-              )
-            ],
-            1
-          )
-        }),
-        0
+        [
+          _vm._l(_vm.reminders, function(reminder) {
+            return _c(
+              "li",
+              { key: reminder.id, staticClass: "list-group-item" },
+              [
+                _c(
+                  "inertia-link",
+                  {
+                    attrs: {
+                      href: _vm.$route("reminder.view", {
+                        lead: reminder.lead,
+                        reminder: reminder
+                      })
+                    }
+                  },
+                  [
+                    _c("strong", [_vm._v(_vm._s(reminder.lead.name))]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(reminder.reminder))])
+                  ]
+                )
+              ],
+              1
+            )
+          }),
+          _vm._v(" "),
+          _vm.reminders
+            ? _c("li", [
+                _c("strong", [_vm._v("No Record Found")]),
+                _vm._v(" 🌝")
+              ])
+            : _vm._e()
+        ],
+        2
       )
     ])
   ])
@@ -40819,7 +40827,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                            Kamran Maqbool\n                        "
+                          "\n                            {{$page.auth.user.name}}\n                        "
                         )
                       ]
                     ),

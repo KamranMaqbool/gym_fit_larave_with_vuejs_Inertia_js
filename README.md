@@ -2,7 +2,8 @@
 Add Lead for gym 
 
 Add Leads into Database.
-Used CRON Jobs for send reminder Emails &#x1f4e7; to users 
+Used CRON Jobs for send reminder Emails &#x1f4e7; to users
+Send Email to User 
 
 After clone you can run Db Seed using this command (php artisan db:seed).
 
