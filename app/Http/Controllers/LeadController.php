@@ -11,6 +11,7 @@ class LeadController extends Controller
 {
 
     private $validations;
+    
     public function __construct()
     {
         $this->validations = [
@@ -23,7 +24,14 @@ class LeadController extends Controller
     }
     public function create()
     {
-    	return Inertia::render('Leads/Add');
+        $packages = \App\Models\Package::query()
+                    ->whereStatus('active')
+                    ->orderByDesc('id')
+                    ->get();
+
+    	return Inertia::render('Leads/Add',[
+            'packages' => $packages,
+        ]);
     }
 
     public function index()
@@ -68,8 +76,11 @@ class LeadController extends Controller
     {
         $lead->load(['reminders']);
 
+        $packages = \App\Models\Package::active()->get();
+
         return Inertia::render('Leads/View',[
             'lead-prop' => $lead,
+            'packages' => $packages,
         ]);
     }
 

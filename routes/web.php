@@ -17,7 +17,7 @@ Route::get('/',[App\Http\Controllers\WelcomeController::class, 'index']);
 
 Route::group(['middleware' => 'auth'],function(){
 	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index'])->name('dash');
-	Route::get('/leads/add',[App\Http\Controllers\LeadController::class, 'create']);
+	Route::get('/leads/add',[App\Http\Controllers\LeadController::class, 'create'])->name('lead.add');
 	Route::get('/leads/list',[App\Http\Controllers\LeadController::class, 'index'])->name('lead.list');
 	Route::get('/leads/view/{lead}',[App\Http\Controllers\LeadController::class, 'view'])->name('lead.view');
 	Route::post('/leads/save',[App\Http\Controllers\LeadController::class, 'save']);
@@ -29,6 +29,11 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/leads/view/reminder/update',[App\Http\Controllers\ReminderController::class, 'updateOrCreate'])->name('reminder.update');
 	Route::post('/leads/view/reminder/close',[App\Http\Controllers\ReminderController::class, 'close'])->name('reminder.close');
 	Route::get('/leads/view/{lead}/reminder/{reminder}/note',[App\Http\Controllers\ReminderController::class, 'addNote'])->name('reminder.note');
+
+	Route::get('/packages/list',[App\Http\Controllers\PackageController::class, 'index'])->name('package.list');
+	Route::post('/packages/save',[App\Http\Controllers\PackageController::class, 'store'])->name('package.save');
+	Route::get('/packages/view/{package}',[App\Http\Controllers\PackageController::class, 'view'])->name('package.view');
+	Route::post('/packages/update',[App\Http\Controllers\PackageController::class, 'update'])->name('package.update');
 });
 
 Auth::routes();
