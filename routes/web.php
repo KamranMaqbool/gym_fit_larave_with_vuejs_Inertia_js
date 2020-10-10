@@ -30,6 +30,9 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/leads/view/reminder/close',[App\Http\Controllers\ReminderController::class, 'close'])->name('reminder.close');
 	Route::get('/leads/view/{lead}/reminder/{reminder}/note',[App\Http\Controllers\ReminderController::class, 'addNote'])->name('reminder.note');
 
+	Route::get('/leads/subscribe/{lead}',[App\Http\Controllers\LeadSubscriberController::class, 'view'])->name('lead.subscribe');
+	// Route::post('leads/subscribe/{lead}',[App\Http\Controllers\LeadSubscriberController::class, 'view']);
+
 	Route::get('/packages/list',[App\Http\Controllers\PackageController::class, 'index'])->name('package.list');
 	Route::post('/packages/save',[App\Http\Controllers\PackageController::class, 'store'])->name('package.save');
 	Route::get('/packages/view/{package}',[App\Http\Controllers\PackageController::class, 'view'])->name('package.view');

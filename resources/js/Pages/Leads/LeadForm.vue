@@ -31,9 +31,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <button class="btn btn-success">Submit</button>
                 <inertia-link class="btn btn-primary" :href="$route('lead.list')">Back &#x1f448; </inertia-link>
+            </div>
+            <div class="col-md-6">
+                <inertia-link class="btn btn-success float-right" :href="$route('lead.subscribe',{lead:mainLead})">Add Subscriber</inertia-link>
             </div>
         </div>
     </form>
