@@ -37,7 +37,8 @@ class LeadController extends Controller
     public function index()
     {
     	$leads = \App\Models\Lead::query()
-    			->where('branch_id',1)
+    			->where('active',1)
+                ->where('branch_id',1)
     			->orderByDesc('id')
     			->get();
 

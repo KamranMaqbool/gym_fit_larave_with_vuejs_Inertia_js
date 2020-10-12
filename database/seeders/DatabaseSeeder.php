@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserTableSeeder;
 use Database\Seeders\InitalDataSeeder;
+use Database\Seeders\PackageDataSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
     	$this->call([
             UserTableSeeder::class,
     		InitalDataSeeder::class,
+            PackageDataSeeder::class,
     	]);
     }
 }

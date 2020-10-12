@@ -34,7 +34,8 @@ import SubscriberForm from './SubscriberForm.vue'
 
         methods:{
             handleSubscribeAdd(payload){
-
+                debugger
+                this.$inertia.post(route('lead.subscribe.add'),payload);
             }
         }
 	}

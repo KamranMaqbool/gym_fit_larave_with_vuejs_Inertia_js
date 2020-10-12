@@ -1,5 +1,5 @@
 <template>
-	<form @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit">
         <div class="form-group">
             <label for="name">Name: &#x1f64e;</label>
             <input type="text" class="form-control" placeholder="Enter name" v-model="localLead.name" id="name" tabindex="1">
@@ -24,40 +24,55 @@
         <button class="btn btn-success">Submit</button>
     </form>
 </template>
-
 <script>
-	export default {
-		name:"SubscriberForm",
-		props:{
-			lead:Object,
-			packages:Array,
-		},
-		data(){
-			return {
-				localLead:{
-					name:"",
-					interested_package:"",
-				}
-			}
-		},
-		created(){
-			this.localLead = this.lead;
-		},
-		methods:{
-			handleSubmit(){
-				let data = {
+import moment from 'moment'
+export default {
+    name: "SubscriberForm",
+    props: {
+        lead: Object,
+        packages: Array,
+    },
+    data() {
+        return {
+            localLead: {
+                name: "",
+                interested_package: "",
+            }
+        }
+    },
+    created() {
+        this.localLead = this.lead;
+    },
+    methods: {
+        handleSubmit() {
+            const filter_package = this.packageFilter();
 
-				}
-				this.$emit('SubscriberAdded',data);
-			}
-		},
-		computed:{
-			subscriptionEndDate(){
+            let data = {
+                name: this.localLead.name,
+                package_id: filter_package.id,
+                lead_id: this.lead.id,
+                renewal_date: moment().add(filter_package.number_of_days, 'days').format("YYYY-MM-DD"),
+                amount: filter_package.amount,
+            }
+            this.$emit('SubscriberAdded', data);
+        },
+        packageFilter() {
+            const filter_package = this.packages.filter(item => {
+                return item.name === this.localLead.interested_package
+            })[0];
+            return filter_package;
+        }
+    },
+    computed: {
+        subscriptionEndDate() {
+            const filter_package = this.packageFilter();
+            return moment().add(filter_package.number_of_days, 'days').format('YYY-MM-DD');
+        },
+        userPaymentAmount() {
+            const filter_package = this.packageFilter();
+            return "Rs " + filter_package.amount;
+        }
+    }
+}
 
-			},
-			userPaymentAmount(){
-
-			}
-		}
-	}
 </script>
