@@ -15,6 +15,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLeft">
                                 <inertia-link href="/leads/list" class="dropdown-item">Leads &#x1f4d2;</inertia-link>
+                                <inertia-link href="/subscribers/list" class="dropdown-item">Subscribers &#x23f9;</inertia-link>
                                 <inertia-link href="/packages/list" class="dropdown-item">Packages &#x1f4e6;</inertia-link>
                             </div>
                         </li>

@@ -3,7 +3,11 @@
 		<div class="container">
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <h1 class="float-left">Packages</h1>
+                    <h4>
+                        <inertia-link :href="$route('lead.view',{lead:lead})">Lead</inertia-link>
+                        <span class="breadcrumb-sep">/</span>
+                        Subscriber
+                    </h4>
                 </div>
             </div>
             <div class="row">

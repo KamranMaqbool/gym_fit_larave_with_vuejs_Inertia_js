@@ -10,7 +10,6 @@ class LeadSubscriberController extends Controller
 {
     public function view(Lead $lead)
     {
-    	info($lead);
     	$packages = \App\Models\Package::query()
                     ->whereStatus('active')
                     ->orderByDesc('id')
@@ -49,6 +48,7 @@ class LeadSubscriberController extends Controller
             'dob' => $lead['dob'],
             'branch_id' => $lead['branch_id'],
             'added_by' => $lead['added_by'],
+            'interested_package' => $package->name,
         ]);
 
         $lead->active = 0;

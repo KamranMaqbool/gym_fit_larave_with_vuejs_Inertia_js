@@ -22,6 +22,7 @@ class CreateSubscribersTable extends Migration
 
             $table->string('name');
             $table->string('email');
+            $table->string('interested_package');
             $table->string('phone');
             $table->integer('age');
             $table->date('dob'); 

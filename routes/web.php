@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/packages/save',[App\Http\Controllers\PackageController::class, 'store'])->name('package.save');
 	Route::get('/packages/view/{package}',[App\Http\Controllers\PackageController::class, 'view'])->name('package.view');
 	Route::post('/packages/update',[App\Http\Controllers\PackageController::class, 'update'])->name('package.update');
+
+	Route::get('/subscribers/list',[App\Http\Controllers\SubscriberController::class,'index'])->name('subscribers.list');
 });
 
 Auth::routes();

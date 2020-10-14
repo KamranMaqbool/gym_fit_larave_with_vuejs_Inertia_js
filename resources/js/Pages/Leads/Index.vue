@@ -23,7 +23,7 @@
                     		</tr>
                     	</thead>
                     	<tbody>
-                    		<tr v-for="lead in leads" :key="lead.id">
+                    		<tr v-for="lead in leads.data" :key="lead.id">
                     			<td>{{lead.id}}</td>
                     			<td><inertia-link :href="$route('lead.view',{lead:lead})">{{lead.name}}</inertia-link></td>
                     			<td>{{lead.email}}</td>
@@ -35,6 +35,7 @@
                     		</tr>
                     	</tbody>
                     </table>
+                    <pagination :links="leads.links"></pagination>
                 </div>
             </div>
         </div>
@@ -42,9 +43,11 @@
 </template>
 <script>
 import Layout from '../../shared/Layout.vue'
+import Pagination from '../../shared/Pagination.vue'
 export default {
     components: {
-        Layout
+        Layout,
+        Pagination
     },
     props:['leads'],
 }
